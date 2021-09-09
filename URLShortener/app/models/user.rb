@@ -7,7 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+
 class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
-    
 end
