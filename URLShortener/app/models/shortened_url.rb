@@ -7,6 +7,15 @@
 #  long_url  :string           not null
 #  user_id   :integer
 #
+require "securerandom"
+
 class ShortenedUrl < ApplicationRecord
     validates :short_url, :long_url, presence: true, uniqueness: true
+
+
+    def self.random_code
+        unless url
+            SecureRandom::urlsafe_base64
+        
+    end
 end
